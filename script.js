@@ -78,7 +78,6 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinksContainer = document.getElementById('navLinks');
 const navOverlay = document.getElementById('navOverlay');
-const navbar = document.getElementById('navbar');
 
 function openNav() {
     hamburger.classList.add('open');
