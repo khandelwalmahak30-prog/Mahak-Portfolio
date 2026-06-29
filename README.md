@@ -43,7 +43,7 @@ My_portfolio/
 ├── style.css           # All styles (CSS variables, sections, responsive)
 ├── script.js           # All JavaScript (animations, interactions, modal)
 └── images/
-    ├── profile.jpg     # Profile photo
+    ├── profile.png     # Profile photo
     ├── hospital.png    # Hospital Management System screenshot
     ├── portfolio.svg   # Portfolio project preview
     ├── htmlcss.svg     # HTML & CSS projects preview
