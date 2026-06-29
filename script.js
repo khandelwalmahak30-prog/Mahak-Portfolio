@@ -199,7 +199,15 @@ document.addEventListener('keydown', e => {
 });
 
 // =============================================
-// CONTACT FORM
+// EMAILJS INITIALIZATION
+// =============================================
+
+// ► STEP 1: Replace 'YOUR_PUBLIC_KEY' with your EmailJS Public Key
+//   Where to find it: EmailJS Dashboard → Account → API Keys → Public Key
+emailjs.init('mPuNtMLWUf4zmhnIq');
+
+// =============================================
+// CONTACT FORM — EmailJS Integration
 // =============================================
 
 const contactForm = document.getElementById('contactForm');
@@ -208,13 +216,47 @@ const formStatus = document.getElementById('formStatus');
 if (contactForm) {
     contactForm.addEventListener('submit', e => {
         e.preventDefault();
-        formStatus.textContent = "Message sent! I'll get back to you soon.";
-        formStatus.className = 'form-status success';
-        contactForm.reset();
-        setTimeout(() => {
-            formStatus.textContent = '';
-            formStatus.className = 'form-status';
-        }, 5000);
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        // ► STEP 2: Replace 'YOUR_SERVICE_ID' with your EmailJS Service ID
+        //   Where to find it: EmailJS Dashboard → Email Services → your connected service
+        const serviceId = 'mahak-portfolio';
+
+        // ► STEP 3: Replace 'YOUR_TEMPLATE_ID' with your EmailJS Template ID
+        //   Where to find it: EmailJS Dashboard → Email Templates → your template
+        const templateId = 'template_rf3vg27';
+
+        // These keys must match the variables in your EmailJS email template:
+        // {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+        const templateParams = {
+            from_name:  document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            subject:    document.getElementById('subject').value,
+            message:    document.getElementById('message').value
+        };
+
+        emailjs.send(serviceId, templateId, templateParams)
+            .then(() => {
+                formStatus.textContent = "Message sent successfully! I'll get back to you soon.";
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                setTimeout(() => {
+                    formStatus.textContent = '';
+                    formStatus.className = 'form-status';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('EmailJS Error:', error);
+                formStatus.textContent = 'Failed to send message. Please try again or email me directly.';
+                formStatus.className = 'form-status error';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            });
     });
 }
 

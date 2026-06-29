@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- EmailJS SDK — initialize with YOUR_PUBLIC_KEY in script.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +35,6 @@
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#certifications" class="nav-link">Certifications</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -193,6 +194,30 @@
                 <p>Intermediate</p>
                 <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
             </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3>C</h3>
+                <p>Beginner</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="45"></div></div>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+                <h3>C++</h3>
+                <p>Beginner</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="40"></div></div>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
+                <h3>Basic DSA</h3>
+                <p>Beginner</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="35"></div></div>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="550">
+                <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                <h3>Scikit-learn</h3>
+                <p>Beginner</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="35"></div></div>
+            </div>
         </div>
     </section>
 
@@ -218,60 +243,26 @@
             <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
-                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-icon"><i class="fas fa-school"></i></div>
                     <div class="timeline-info">
-                        <span class="timeline-date">Completed</span>
-                        <h3>IBM Internship</h3>
-                        <h4>Artificial Intelligence Internship</h4>
-                        <p>Successfully completed AI Internship and gained practical knowledge in Artificial Intelligence concepts.</p>
+                        <span class="timeline-date">12th Grade &mdash; Science (PCM)</span>
+                        <h3>12th &ndash; 90%</h3>
+                        <h4>Virgin Mary Higher Secondary School</h4>
+                        <p>Completed 12th grade with 90% in the Science stream (Physics, Chemistry, Mathematics).</p>
                     </div>
                 </div>
             </div>
             <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
-                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-icon"><i class="fas fa-school"></i></div>
                     <div class="timeline-info">
-                        <span class="timeline-date">Ongoing</span>
-                        <h3>Infosys Springboard</h3>
-                        <h4>Virtual Internship</h4>
-                        <p>Selected for Infosys Virtual Internship program. Currently ongoing and gaining industry experience.</p>
+                        <span class="timeline-date">10th Grade</span>
+                        <h3>10th &ndash; 93%</h3>
+                        <h4>Virgin Mary Higher Secondary School</h4>
+                        <p>Completed 10th grade with 93% marks.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-tag">Work Experience</span>
-            <h2 class="section-title">Internships</h2>
-        </div>
-        <div class="experience-grid">
-            <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="exp-header">
-                    <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
-                    <div class="exp-badge completed">Completed</div>
-                </div>
-                <h3>IBM Internship</h3>
-                <h4>Artificial Intelligence</h4>
-                <p>Successfully completed the AI Internship and gained practical knowledge in Artificial Intelligence concepts and tools provided by IBM.</p>
-                <button class="btn btn-primary" onclick="window.open('images/ibm.jpeg')">
-                    <i class="fas fa-certificate"></i> View Certificate
-                </button>
-            </div>
-            <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="exp-header">
-                    <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
-                    <div class="exp-badge ongoing">Ongoing</div>
-                </div>
-                <h3>Infosys Springboard</h3>
-                <h4>Virtual Internship</h4>
-                <p>Selected for Infosys Virtual Internship program. Currently working on assigned modules and gaining industry-level experience.</p>
-                <button class="btn btn-outline">
-                    <i class="fas fa-envelope"></i> View Selection Mail
-                </button>
             </div>
         </div>
     </section>
@@ -417,6 +408,10 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div><span>Location</span><small>Ujjain, Madhya Pradesh, India</small></div>
                     </div>
+                    <a href="tel:+919691223092" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        <div><span>Mobile</span><small>+91 9691223092</small></div>
+                    </a>
                 </div>
             </div>
             <form class="contact-form" id="contactForm" data-aos="fade-left">
