@@ -77,17 +77,44 @@ window.addEventListener('scroll', () => {
 
 const hamburger = document.getElementById('hamburger');
 const navLinksContainer = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+const navbar = document.getElementById('navbar');
+
+function openNav() {
+    hamburger.classList.add('open');
+    navLinksContainer.classList.add('open');
+    navOverlay.classList.add('active');
+    navbar.classList.add('nav-open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeNav() {
+    hamburger.classList.remove('open');
+    navLinksContainer.classList.remove('open');
+    navOverlay.classList.remove('active');
+    navbar.classList.remove('nav-open');
+    document.body.style.overflow = '';
+}
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinksContainer.classList.toggle('open');
+    if (hamburger.classList.contains('open')) {
+        closeNav();
+    } else {
+        openNav();
+    }
 });
 
+// Close when tapping the dark overlay
+navOverlay.addEventListener('click', closeNav);
+
+// Close when a nav link is clicked
 navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinksContainer.classList.remove('open');
-    });
+    link.addEventListener('click', closeNav);
+});
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav();
 });
 
 // =============================================
